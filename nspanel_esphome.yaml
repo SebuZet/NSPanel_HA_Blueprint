@@ -48,7 +48,7 @@ wifi:
   ##### Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "${device_name}"
-    password: ${iot_wifi_ap_pass}
+    password: ${ap_password}
 
 ##### Functionality for the Nextion display #####
 external_components:
@@ -71,15 +71,14 @@ web_server:
   port: 80
   auth:
     username: admin
-    password: ${wifi_password}
+    # password: ${wifi_password}
     ##### advanced config - change to use web_password ##### 
-    # password: ${web_password}
+    password: ${web_password}
 
 ##### OTA PASSWORD #####
 ota:
-  password: ${esphome_ota_pass}
   ##### advanced config - change to use ota_password ##### 
-  # password: ${ota_password}
+  password: ${ota_password}
   safe_mode: true
   reboot_timeout: 3min
   num_attempts: 3
@@ -119,7 +118,7 @@ button:
 ##### START - API CONFIGURATION #####
 api:
   ##### advanced config - activate to use api_password ##### 
-  password: ${esphome_api_pass}
+  password: ${api_password}
   services:
 
     ##### SERVICE TO UPDATE THE HMI FILE #####
